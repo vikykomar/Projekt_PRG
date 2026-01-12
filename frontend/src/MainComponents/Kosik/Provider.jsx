@@ -1,11 +1,17 @@
 import { Kosik_Context } from "./Main"
 
-import { useState, useCallback } from "react"
+import { Polozky } from "../Polozky/Main"
+
+import { useState, useCallback, useEffect } from "react"
 
 export default function Kosik_Provider({children}){
     const [Kosik, Set_Kosik] = useState(new Map())
 
     const Pridat = useCallback((UUID, Pocet) => {
+        if(!Polozky.has(UUID)){
+            return
+        }
+
         Set_Kosik(Previous_Kosik => {
             const Existing_Pocet = Previous_Kosik.get(UUID)
 
