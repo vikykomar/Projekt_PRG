@@ -1,10 +1,8 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+
+import Kosik_Provider from '../MainComponents/Kosik/Provider'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+  <Kosik_Provider>
+  </Kosik_Provider>
 )
