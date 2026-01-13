@@ -1,0 +1,25 @@
+:root, body, .app{
+    height: 100%; 
+    margin: 0px;
+}
+
+:root {
+  box-sizing: border-box;
+}
+
+.app{
+  display: flex; 
+  flex-direction: column;
+}
+
+.app * {
+  font-family: var(--main-font);
+  box-sizing: border-box;
+}
+
+.Content{
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
