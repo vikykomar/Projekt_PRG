@@ -1,6 +1,6 @@
-import {BrowserRouter, Routes, Route} from "react-router"
+import {BrowserRouter, Routes, Route, Outlet} from "react-router"
 
-import TopBar from "./MainComponents/TopBar/Main"
+import Header from "./MainComponents/Header/Main"
 
 import StrankaNenalezena from "./Routes/StrankaNenalezena/Main"
 
@@ -10,8 +10,8 @@ export default function Router (){
         <BrowserRouter>
             <Routes>
                 <Route path="*" element={<StrankaNenalezena/>}/>    
-                <Route element={<TopBar/>}>
-                    <Route path="/" element={<div></div>}/>
+                <Route element={<Header/>}>
+                    <Route path="/" element={<div className="Content"></div>}/>
                 </Route>
             </Routes>
         </BrowserRouter>
