@@ -1,0 +1,23 @@
+.Main_Bar{
+    display: flex;
+
+    .Logo_Container{
+        flex: 1;
+
+        display: flex;
+
+        justify-content: left;
+        align-items: center;
+    }
+
+    .Kosik_Container{
+        flex: 1;
+
+        display: flex;
+
+        padding-right: 20px;
+
+        justify-content: right;
+        align-items: center;
+    }
+}
