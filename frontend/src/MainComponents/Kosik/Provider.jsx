@@ -1,14 +1,14 @@
 import { Kosik_Context } from "./Main"
 
-import { Polozky } from "../Polozky/Main"
+import { Produkty } from "../Produkty/Main"
 
-import { useState, useCallback, useEffect } from "react"
+import { useState, useCallback } from "react"
 
 export default function Kosik_Provider({children}){
     const [Kosik, Set_Kosik] = useState(new Map())
 
     const Pridat = useCallback((UUID, Pocet) => {
-        if(!Polozky.has(UUID)){
+        if(!Produkty.has(UUID)){
             return
         }
 
