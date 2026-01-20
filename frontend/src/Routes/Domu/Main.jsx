@@ -2,6 +2,7 @@ import Style from "./Main.module.css"
 
 import { Produkty } from "../../MainComponents/Produkty/Main"
 import { useMemo } from "react"
+import { Link } from "react-router"
 
 export default function Domu(){
 
@@ -12,12 +13,12 @@ export default function Domu(){
             <h2>Produkty</h2>
             <div className={Style.Produkty}>
                 {ProduktyArray.map(([key, value]) => 
-                    <div className={Style.Produkt} key={key}>
+                    <Link to={`/Produkt/${key}`} className={Style.Produkt} key={key}> 
                         <img alt={value.Nazev} src={`/Polozky_Img_Previews/${value.IMG_Preview}`}></img>
                         <h2>{value.Nazev}</h2>
                         <p>{value.Short_Description}</p>
                         <h3>{value.Cena} Kč</h3>
-                    </div>
+                    </Link>
                 )}
             </div>
         </div>

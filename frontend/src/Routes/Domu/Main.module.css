@@ -26,6 +26,8 @@
         cursor: pointer;
 
         text-align: center;
+        text-decoration: none;
+        color: black;
 
         transition: transform 0.2s ease-in-out;
 
