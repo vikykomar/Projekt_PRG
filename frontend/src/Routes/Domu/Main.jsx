@@ -14,7 +14,7 @@ export default function Domu(){
             <div className={Style.Produkty}>
                 {ProduktyArray.map(([key, value]) => 
                     <Link to={`/Produkt/${key}`} className={Style.Produkt} key={key}> 
-                        <img alt={value.Nazev} src={`/Polozky_Img_Previews/${value.IMG_Preview}`}></img>
+                        <img alt={value.Nazev} src={`/Produkty_Img_Previews/${value.IMG_Preview}`}></img>
                         <h2>{value.Nazev}</h2>
                         <p>{value.Short_Description}</p>
                         <h3>{value.Cena} Kč</h3>
