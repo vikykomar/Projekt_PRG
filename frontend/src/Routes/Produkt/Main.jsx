@@ -29,8 +29,6 @@ export default function Produkt(){
         set_Produkt([params.UUID, NactenyProdukt])
     }, [Produkty])
 
-    console.log(use_Kosik.Kosik)
-
     const Pridat_Do_Kosiku = () => {
         use_Kosik.Pridat(Produkt[0], 1)
     }

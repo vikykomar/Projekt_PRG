@@ -2,10 +2,29 @@ import { Kosik_Context } from "./Main"
 
 import { Produkty } from "../Produkty/Main"
 
-import { useState, useCallback } from "react"
+import { useState, useCallback, useEffect, useRef } from "react"
 
 export default function Kosik_Provider({children}){
+    const isFirstRender = useRef(true)
     const [Kosik, Set_Kosik] = useState(new Map())
+
+    useEffect(() => {
+        if(isFirstRender.current === true){
+            try{
+                const Stored_Array = JSON.parse(localStorage.getItem("kosik"))
+                
+                if(Array.isArray(Stored_Array)){
+                    Set_Kosik(new Map(Stored_Array))
+                }
+            }
+            catch{}
+            
+            isFirstRender.current = false;
+            return
+        }
+
+        localStorage.setItem("kosik", JSON.stringify(Array.from(Kosik)))
+    }, [Kosik])
 
     const Pridat = useCallback((UUID, Pocet) => {
         if(!Produkty.has(UUID)){
