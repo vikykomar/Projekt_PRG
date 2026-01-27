@@ -27,7 +27,9 @@ export default function Kosik_Provider({children}){
     }, [Kosik])
 
     const Pridat = useCallback((UUID, Pocet) => {
-        if(!Produkty.has(UUID)){
+        const Produkt = Produkty.get(UUID)
+
+        if(Produkt === undefined){
             return
         }
 
@@ -37,6 +39,10 @@ export default function Kosik_Provider({children}){
             const New_Kosik = new Map(Previous_Kosik); 
 
             const Number_To_Add = typeof Pocet === "number" && Pocet > 0 ? Pocet : 1
+
+            if(Number_To_Add + Existing_Pocet > Produkt.Sklad){
+                return Previous_Kosik
+            }
 
             if(Existing_Pocet !== undefined){
                 New_Kosik.set(UUID, Existing_Pocet + Number_To_Add)

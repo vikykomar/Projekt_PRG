@@ -1,4 +1,4 @@
-.Product_And_Description{
+.Produkt{
     display: flex;
 
     margin-top: 30px;
@@ -7,9 +7,11 @@
         width: 30%;
     }
 
-    .Description{
+    .Info{
         display: flex;
         flex-direction: column;
+
+        padding-right: 30px;
 
         align-items: start;
 
@@ -21,6 +23,12 @@
             margin: 0px;
         }
 
+        .Description{
+            overflow: auto;
+
+            flex: 1;
+        }
+
         .Skladem {
             color: green;
         }
@@ -29,12 +37,34 @@
             color: red;
         }
     
-        .Pridat_Do_Kosiku{
-            margin-top: auto;
+        .Ovladani_Kosiku_Container{
+            min-width: fit-content; 
+            height: 40px;
 
-            padding: 20px;
+            width: 300px;
 
-            cursor: pointer;
+            display: flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+            input[type="button"]{
+                flex: 1;
+                height: 100%;
+            }
+
+            p{
+                margin: 0px;
+
+                font-size: 20px;
+                padding: 0px;
+
+                overflow: visible;
+
+                height: fit-content;
+                width: fit-content;
+            }
         }
     }
 }

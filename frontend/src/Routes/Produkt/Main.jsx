@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { useNavigate, useParams } from "react-router"
 
 import { Produkty } from "../../MainComponents/Produkty/Main"
@@ -13,6 +13,7 @@ export default function Produkt(){
     const params = useParams()
 
     const [Produkt, set_Produkt] = useState([null, {Nazev: null, Sklad: null, Cena: null, Description: null, Short_Description: null, IMG_Preview: null, IMG: []}])
+    const Pocet_V_Kosiku = useMemo(() => {if(params.UUID === undefined) return 0; const Pocet = use_Kosik.Kosik.get(params.UUID); return Pocet === undefined ? 0 : Pocet}, [use_Kosik.Kosik, params.UUID])
 
     useEffect(() => {
         if(params.UUID === undefined){
@@ -27,20 +28,32 @@ export default function Produkt(){
         }
 
         set_Produkt([params.UUID, NactenyProdukt])
-    }, [Produkty])
+    }, [Produkty, params.UUID])
 
     const Pridat_Do_Kosiku = () => {
         use_Kosik.Pridat(Produkt[0], 1)
     }
 
+    const Odebrat_Z_Kosiku = () => {
+        use_Kosik.Odebrat(Produkt[0], 1)    
+    }
+
     return(
         <div className="Content">
-            <div className={Style.Product_And_Description}>
+            <div className={Style.Produkt}>
                 <img src={`/Produkty_Img/${Produkt[1].IMG[0]}`}/>
-                <div className={Style.Description}>
+                <div className={Style.Info}>
                     <h1>{Produkt[1].Nazev}</h1>
                     <h3 className={Produkt[1].Sklad <= 0 ? Style.Vyprodano : Style.Skladem}>{Produkt[1].Sklad <= 0 ? "Vyprodáno" : `Skladem: ${Produkt[1].Sklad} Ks`}</h3>
-                    <input type="button" className={Style.Pridat_Do_Kosiku} onClick={Pridat_Do_Kosiku} value={"Přidat do košíku"}/>
+                    <p className={Style.Description}>{Produkt[1].Description}</p>
+                    <div className={Style.Ovladani_Kosiku_Container}>
+                        {Pocet_V_Kosiku <= 0 &&<input type="button" className={Style.Pridat_Do_Kosiku} onClick={Pridat_Do_Kosiku} value={"Přidat do košíku"}/>}
+                        {Pocet_V_Kosiku > 0 && <>
+                            <input type="button" onClick={Odebrat_Z_Kosiku} value={"Minus"}></input>
+                            <p>{Pocet_V_Kosiku}</p>
+                            <input type="button" onClick={Pridat_Do_Kosiku} disabled={Pocet_V_Kosiku >= Produkt[1].Sklad} value={"Plus"}></input>
+                        </>}
+                    </div>
                 </div>
             </div>
         </div>
