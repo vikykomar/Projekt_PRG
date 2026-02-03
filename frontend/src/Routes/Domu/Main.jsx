@@ -1,11 +1,14 @@
 import Style from "./Main.module.css"
 
+import { Kategorie } from "../../MainComponents/Produkty/Kategorie"
 import {Vybrane_Produkty} from "../../MainComponents/Produkty/VybraneProdukty"
 import { Produkty } from "../../MainComponents/Produkty/Main"
-import { useMemo, useState } from "react"
+import { useMemo } from "react"
 import { Link } from "react-router"
 
 export default function Domu(){
+
+    const KategorieArray = useMemo(() => {return Array.from(Kategorie)}, [Kategorie])
 
     const Vybrane_Produkty_Array = useMemo(() => {
         const New_Vybrane_Produkty_Array = []
@@ -23,6 +26,14 @@ export default function Domu(){
 
     return(
         <div className="Content">
+            <h2>Kategorie</h2>
+            <div className={Style.KategorieSeznam}>
+                {KategorieArray.map(([key, value]) => 
+                    <Link to={`/Kategorie/${key}`} className={Style.Kategorie} key={key}> 
+                        <h2>{value.Nazev}</h2>
+                    </Link>
+                )}              
+            </div>
             <h2>Doporučené produkty</h2>
             <div className={Style.Produkty}>
                 {Vybrane_Produkty_Array.map(([key, value]) => 

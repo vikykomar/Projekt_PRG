@@ -14,7 +14,9 @@ export default function Router (){
                 <Route path="*" element={<StrankaNenalezena/>}/>    
                 <Route element={<Header/>}>
                     <Route path="/" element={<Domu/>}/>
-                    <Route path="/produkt/:UUID" element={<Produkt/>}/>
+                    <Route path="/Kategorie" element={<a>Stranka seznamu kategorii</a>}/>
+                    <Route path="/Kategorie/:UUID" element={<a>Stranka specificke kategorie</a>}/>
+                    <Route path="/Produkt/:UUID" element={<Produkt/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>

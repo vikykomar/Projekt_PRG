@@ -1,41 +1,26 @@
-.Produkty{
-    display: flex;
-    flex: 1;
-
-    flex-wrap: wrap;
-    gap: 16px;
-
-    align-items: stretch;
-    align-content: flex-start;
-
-    .Produkt{
-        display: flex;
-        flex-direction: column;
-
-        gap: 5px;
-
-        align-items: center;
-
+.KategorieSeznam{
+    .Kategorie{
         width: 250px;
         padding: 5px;
 
-        height: auto;
+        border-radius: 5px;
+    }
+}
 
-        border: black 1px solid;
+.Produkty{
+    .Produkt{
+        width: 250px;
+        padding: 5px;
 
-        cursor: pointer;
+        border-radius: 2px;
 
-        text-align: center;
-        text-decoration: none;
-        color: black;
-
-        transition: transform 0.2s ease-in-out;
+        gap: 5px;
 
         img{
             width: 100%;
         }
 
-        h2, p{
+        p{
             margin: 0px;
         }
 
@@ -47,8 +32,41 @@
             color: rgb(73, 73, 73);
         }
     }
+}
 
-    .Produkt:hover{
+.Produkty, .KategorieSeznam{
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 16px;
+
+    align-items: stretch;
+    align-content: flex-start;
+
+    .Produkt, .Kategorie{
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        
+        height: auto;
+    
+        border: black 1px solid;
+    
+        cursor: pointer;
+    
+        text-align: center;
+        text-decoration: none;
+        color: black;
+    
+        transition: transform 0.2s ease-in-out;
+
+        h2{
+            margin: 0px;
+        }
+    }
+
+    .Produkt:hover, .Kategorie:hover{
         transform: scale(1.02);
     }
 }
