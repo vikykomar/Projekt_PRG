@@ -17,4 +17,4 @@ export const Produkty = new Map([
     ["11111111-1111-4111-a111-111111111014", {Nazev: "Věšák WallHook", Cena: 60, Sklad: 30, Description: "Nástěnný věšák s pěti háčky.", Short_Description: "Věšák", IMG_Preview: "1.jpg", IMG: ["1.jpg","2.jpg","3.jpg"]}],
     ["11111111-1111-4111-a111-111111111015", {Nazev: "Křeslo Relaxo", Cena: 270, Sklad: 10, Description: "Pohodlné relaxační křeslo.", Short_Description: "Křeslo", IMG_Preview: "1.jpg", IMG: ["1.jpg","2.jpg","3.jpg"]}]
   ]
-  )
+)

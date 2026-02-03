@@ -13,7 +13,7 @@ export default function Header(){
                     </div>
                     <div className={Style.Page_Links}>
                         <NavLink to={"/"}>Domů</NavLink>
-                        <NavLink to={"/CenaDopravy"}>Cena dopravy</NavLink>
+                        <NavLink to={"/Kategorie"}>Kategorie</NavLink>
                         <NavLink to={"/ObchodniPodminky"}>Obchodní podmínky</NavLink>
                         <NavLink to={"/Kontakty"}>Kontaky</NavLink>
                     </div>
