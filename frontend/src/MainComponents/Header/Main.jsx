@@ -1,8 +1,14 @@
+import { useMemo } from "react";
 import { NavLink, Outlet } from "react-router";
+
+import { Use_Kosik_Context } from "../../MainComponents/Kosik/Main"
 
 import Style from "./Main.module.css"
 
 export default function Header(){
+    const use_Kosik = Use_Kosik_Context()
+
+    const Pocet_V_Kosiku = useMemo(() => {return use_Kosik.Kosik.values().reduce((sum, value) => sum + value, 0);}, [use_Kosik.Kosik])
 
     return (
         <>
@@ -19,7 +25,7 @@ export default function Header(){
                     </div>
                 </div>
                 <div className={Style.Elements_Right}>
-                    <NavLink to={"/Kosik"}>Košík</NavLink>
+                    <NavLink to={"/Kosik"}>Košík ({Pocet_V_Kosiku})</NavLink>
                 </div>
             </header>
             <Outlet/>
