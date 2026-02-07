@@ -11,6 +11,7 @@ export default function Kategorie(){
 
     return(
         <div className="Content">
+            <h2>Kategorie</h2>
             <div className={Style.Kategorie_Seznam}>
                 {Kategorie_Seznam_Array.map(([key, value]) => 
                     <Link to={`/Kategorie/${key}`} className={Style.Kategorie} key={key}> 

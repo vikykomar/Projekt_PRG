@@ -19,9 +19,8 @@ export default function Header(){
                     </div>
                     <div className={Style.Page_Links}>
                         <NavLink to={"/"}>Domů</NavLink>
-                        <NavLink to={"/Kategorie"}>Kategorie</NavLink>
-                        <NavLink to={"/ObchodniPodminky"}>Obchodní podmínky</NavLink>
-                        <NavLink to={"/Kontakty"}>Kontaky</NavLink>
+                        <NavLink to={"/Kategorie"} className={({isActive}) => isActive ? Style.Active : ""}>Kategorie</NavLink>
+                        <NavLink to={"/Kontakty"} className={({isActive}) => isActive ? Style.Active : ""}>Kontaky</NavLink>
                     </div>
                 </div>
                 <div className={Style.Elements_Right}>

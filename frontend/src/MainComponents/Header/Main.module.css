@@ -36,6 +36,10 @@
             text-decoration: none;
         }
     
+        .Active{
+            font-weight: bold;
+        }
+
         *::after {
             content: '';
             position: absolute;
