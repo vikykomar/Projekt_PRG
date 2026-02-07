@@ -1,4 +1,4 @@
-.KategorieSeznam{
+.Kategorie_Seznam{
     .Kategorie{
         width: 250px;
         padding: 5px;
@@ -34,7 +34,7 @@
     }
 }
 
-.Produkty, .KategorieSeznam{
+.Produkty, .Kategorie_Seznam{
     display: flex;
     flex-wrap: wrap;
 
