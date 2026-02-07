@@ -3,6 +3,8 @@ import { NavLink, Outlet } from "react-router";
 
 import { Use_Kosik_Context } from "../../MainComponents/Kosik/Main"
 
+import ShoppingCart from "../../Icons/ShoppingCart.svg"
+
 import Style from "./Main.module.css"
 
 export default function Header(){
@@ -24,7 +26,7 @@ export default function Header(){
                     </div>
                 </div>
                 <div className={Style.Elements_Right}>
-                    <NavLink to={"/Kosik"}>Košík ({Pocet_V_Kosiku})</NavLink>
+                    <NavLink to={"/Kosik"}><img src={ShoppingCart}/>KOŠÍK ({Pocet_V_Kosiku})</NavLink>
                 </div>
             </header>
             <Outlet/>
