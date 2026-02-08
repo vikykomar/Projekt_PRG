@@ -77,3 +77,22 @@
         }
     }
 }
+
+
+@media screen and (max-width: 768px){
+    .Elements_Left{
+        .Logo_Container{
+            justify-content: center;
+        }  
+
+        .Page_Links{
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+    }
+
+    .Elements_Right{
+        margin-left: 0px;
+    }
+}
