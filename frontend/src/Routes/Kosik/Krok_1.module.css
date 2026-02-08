@@ -27,6 +27,10 @@
                 img{
                     width: 100px;
                 }
+
+                h3{
+                    padding-left: 10px;
+                }
             }
 
             input[type="number"]{
