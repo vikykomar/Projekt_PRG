@@ -3,8 +3,35 @@
 
     margin-top: 30px;
 
-    img{
+    .IMG_Container{
+        position: relative;
+
         width: 30%;
+
+        img{
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .Navigace {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 32px;
+            padding: 8px 12px;
+            cursor: pointer;
+            z-index: 2;
+        }
+        .Predchozi {
+            left: 10px;
+        }
+
+        .Dalsi {
+            right: 10px;
+        }
     }
 
     .Info{
