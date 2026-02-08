@@ -1,0 +1,11 @@
+.Kontakni_Informace{
+    h2{
+        margin-bottom: 5px;
+    }
+}
+
+.Oteviraceni_Dobra{
+    .Den{
+        text-align: right;
+    }
+}

@@ -11,6 +11,10 @@ import Produkt from "./Routes/Produkt/Main"
 
 import Kosik from "./Routes/Kosik/Main"
 
+import ONas from "./Routes/ONas/Main"
+
+import Kontakty from "./Routes/Kontakty/Main"
+
 import StrankaNenalezena from "./Routes/StrankaNenalezena/Main"
 
 export default function Router (){
@@ -26,6 +30,8 @@ export default function Router (){
                         <Route path="/Kategorie/:UUID" element={<Kategorie_Specificka/>}/>
                         <Route path="/Produkt/:UUID" element={<Produkt/>}/>
                         <Route path="/Kosik" element={<Kosik/>}/>
+                        <Route path="/ONas" element={<ONas/>}/>
+                        <Route path="/Kontakty" element={<Kontakty/>}/>
                     </Route>
                 </Route>
             </Routes>

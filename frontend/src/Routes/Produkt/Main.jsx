@@ -78,7 +78,7 @@ export default function Produkt(){
                         {Pocet_V_Kosiku <= 0 &&<input type="button" className={Style.Pridat_Do_Kosiku} onClick={Pridat_Do_Kosiku} value={"Přidat do košíku"}/>}
                         {Pocet_V_Kosiku > 0 && <>
                             <input type="button" onClick={Odebrat_Z_Kosiku} value={"-"}></input>
-                            <p>{Pocet_V_Kosiku}</p>
+                            <strong>{Pocet_V_Kosiku} v košíku</strong>
                             <input type="button" onClick={Pridat_Do_Kosiku} disabled={Pocet_V_Kosiku >= Produkt[1].Sklad} value={"+"}></input>
                         </>}
                     </div>
