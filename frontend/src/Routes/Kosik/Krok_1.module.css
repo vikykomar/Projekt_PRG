@@ -100,6 +100,8 @@
     }
 
     input:disabled{
+        cursor: default;
+
         background-color: rgba(119, 119, 119, 0.555);
     }
 }
