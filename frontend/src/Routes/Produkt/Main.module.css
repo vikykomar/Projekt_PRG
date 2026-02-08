@@ -38,7 +38,7 @@
         display: flex;
         flex-direction: column;
 
-        padding-right: 30px;
+        padding-left: 30px;
 
         align-items: start;
 
@@ -77,8 +77,16 @@
             gap: 5px;
 
             input[type="button"]{
-                flex: 1;
-                height: 100%;
+                font-size: 30px;
+
+                padding: 10px 20px;
+
+                cursor: pointer;
+
+                border: none;
+
+                background-color: #94bd23;
+                color: white;
             }
 
             p{
@@ -92,6 +100,24 @@
                 height: fit-content;
                 width: fit-content;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .Produkt{
+        flex-direction: column;
+
+        align-items: center;
+
+        .IMG_Container{
+            width: 70%;
+        }
+
+        .Info{
+            align-items: center;
+
+            padding-left: 0px;
         }
     }
 }
