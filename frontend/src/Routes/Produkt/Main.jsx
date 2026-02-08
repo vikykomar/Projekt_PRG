@@ -64,7 +64,7 @@ export default function Produkt(){
         <div className="Content">
             <div className={Style.Produkt}>
                 <div className={Style.IMG_Container}>
-                    <img src={`/Produkty_Img/${Produkt[1].IMG[Current_IMG]}`}/>
+                    <img src={`/Produkty_Img/${Produkt[1].IMG[Current_IMG]}`} alt={Produkt[1].Nazev}/>
 
 
                     <input className={`${Style.Navigace} ${Style.Predchozi}`} type="button" value={"‹"} onClick={IMG_Predchozi}/>
