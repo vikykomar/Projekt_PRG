@@ -6,7 +6,6 @@ import { Kategorie as Kategorie_Seznam_Map } from "../../MainComponents/Produkty
 import { useMemo } from "react"
 
 export default function Kategorie(){
-
     const Kategorie_Seznam_Array = useMemo(() => {return Array.from(Kategorie_Seznam_Map)}, [Kategorie_Seznam_Map])
 
     return(

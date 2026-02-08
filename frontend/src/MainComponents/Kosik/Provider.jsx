@@ -78,9 +78,34 @@ export default function Kosik_Provider({children}){
         })
     }, [])
 
+    const Nastavit = useCallback((UUID, Pocet) => {
+        const Produkt = Produkty.get(UUID)
+
+
+        if(Produkt === undefined || typeof Pocet !== "number"){
+            return
+        }
+
+        Set_Kosik(Previous_Kosik => {
+            const New_Kosik = new Map(Previous_Kosik); 
+
+            if(Pocet > Produkt.Sklad){
+                return Previous_Kosik
+            }
+
+            if(Pocet > 0){
+                New_Kosik.set(UUID, Pocet)
+            }
+            else {
+                New_Kosik.delete(UUID);
+            }
+
+            return New_Kosik
+        })
+    }, [])
 
     return (
-        <Kosik_Context.Provider value={{Kosik, Pridat, Odebrat}}>
+        <Kosik_Context.Provider value={{Kosik, Pridat, Odebrat, Nastavit}}>
             {children}
         </Kosik_Context.Provider>
     )

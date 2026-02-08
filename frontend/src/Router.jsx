@@ -8,6 +8,8 @@ import Kategorie_Specificka from "./Routes/Kategorie/Specificka"
 
 import Produkt from "./Routes/Produkt/Main"
 
+import Kosik from "./Routes/Kosik/Main"
+
 import StrankaNenalezena from "./Routes/StrankaNenalezena/Main"
 
 export default function Router (){
@@ -21,6 +23,7 @@ export default function Router (){
                     <Route path="/Kategorie" element={<Kategorie/>}/>
                     <Route path="/Kategorie/:UUID" element={<Kategorie_Specificka/>}/>
                     <Route path="/Produkt/:UUID" element={<Produkt/>}/>
+                    <Route path="/Kosik" element={<Kosik/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>
