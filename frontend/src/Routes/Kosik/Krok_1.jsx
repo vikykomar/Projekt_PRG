@@ -8,7 +8,7 @@ export default function Kosik_Krok_1({Produkty_V_Kosiku, set_Krok}){
     const use_Kosik = Use_Kosik_Context()
     
     const Celkova_Cena = useMemo(() => Produkty_V_Kosiku.reduce((acc, Produkt) => acc + (Produkt[1].Cena * Produkt[1].Pocet_V_Kosiku), 0), [Produkty_V_Kosiku])
-    const Nelze_Pokracovat = useMemo(() => Produkty_V_Kosiku.some((Produkt) => Produkt[1].Sklad < Produkt[1].Pocet_V_Kosiku), [Produkty_V_Kosiku])
+    const Nelze_Pokracovat = useMemo(() => Produkty_V_Kosiku.length <= 0 || Produkty_V_Kosiku.some((Produkt) => Produkt[1].Sklad < Produkt[1].Pocet_V_Kosiku), [Produkty_V_Kosiku])
 
     const ZmenitPocet = (UUID, Pocet) => {
         const Number_Pocet = Number(Pocet)
@@ -30,7 +30,6 @@ export default function Kosik_Krok_1({Produkty_V_Kosiku, set_Krok}){
 
     return(
         <>
-            <h2>Košík</h2>
             <table className={Style.Produkty}>
                 <colgroup>
                     <col style={{width: "60%"}}/>
@@ -71,7 +70,7 @@ export default function Kosik_Krok_1({Produkty_V_Kosiku, set_Krok}){
                             <td className={Style.Center_Align}>
                                 <h3>{value.Pocet_V_Kosiku * value.Cena} Kč</h3>
                             </td>
-                            <td>
+                            <td className={Style.Center_Align}>
                                 <input type="button" value={"X"} onClick={() => {Smazat(key)}}/>
                             </td>
                         </tr>
