@@ -2,11 +2,17 @@
     border: #e0e0e0 1px solid;
     padding: 10px;
 
+    font-size: 20px;
+
     div{
         display: flex;
         gap: 10px;
 
         align-items: center;
+
+        input{
+            font-size: 20px;
+        }
     }
 }
 
@@ -15,6 +21,12 @@
     border-spacing: 0px;
 
     border: #e0e0e0 1px solid;
+
+    font-size: 20px;
+
+    td{
+        padding: 10px;
+    }
 
     .Left_Align{
         text-align: left;

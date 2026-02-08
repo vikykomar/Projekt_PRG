@@ -104,8 +104,12 @@ export default function Kosik_Provider({children}){
         })
     }, [])
 
+    const Clear = () => {
+        Set_Kosik(new Map())
+    }
+
     return (
-        <Kosik_Context.Provider value={{Kosik, Pridat, Odebrat, Nastavit}}>
+        <Kosik_Context.Provider value={{Kosik, Pridat, Odebrat, Nastavit, Clear}}>
             {children}
         </Kosik_Context.Provider>
     )

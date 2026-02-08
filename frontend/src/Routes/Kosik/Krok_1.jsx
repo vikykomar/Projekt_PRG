@@ -30,6 +30,7 @@ export default function Kosik_Krok_1({Produkty_V_Kosiku, set_Krok}){
 
     return(
         <>
+            <h2>Košík</h2>
             <table className={Style.Produkty}>
                 <colgroup>
                     <col style={{width: "60%"}}/>
